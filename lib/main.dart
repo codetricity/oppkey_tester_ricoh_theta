@@ -6,6 +6,7 @@ import 'package:theta_req_res/notifiers/response_notifier.dart';
 import 'package:theta_req_res/notifiers/request_notifier.dart';
 import 'package:theta_req_res/camera_api/info_button.dart';
 import 'package:theta_req_res/camera_api/state_button.dart';
+import 'package:theta_req_res/camera_api/take_picture.dart';
 import 'package:theta_req_res/windows/request_window.dart';
 import 'package:theta_req_res/windows/response_window.dart';
 
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
                 children: [
                   InfoButton(),
                   StateButton(),
+                  TakePictureButton(),
                 ],
               ),
               Row(
