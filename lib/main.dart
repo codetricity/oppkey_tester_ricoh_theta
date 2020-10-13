@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:panorama/panorama.dart';
 import 'package:http/http.dart' as http;
 import 'package:theta_req_res/notifiers/response_notifier.dart';
 import 'package:theta_req_res/notifiers/request_notifier.dart';
@@ -23,6 +24,8 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    String cameraModel = null;
+
     return MaterialApp(
       title: 'THETA Req Res',
       theme: ThemeData(
@@ -65,6 +68,15 @@ class MyApp extends StatelessWidget {
                       ),
                     ),
                   ),
+                  Container(
+                    width: 300.0,
+                    child: Center(
+                      child: Text(
+                        'Last Image',
+                        style: TextStyle(fontSize: 28),
+                      ),
+                    ),
+                  ),
                 ],
               ),
               SizedBox(
@@ -77,6 +89,11 @@ class MyApp extends StatelessWidget {
                   children: [
                     RequestWindow(),
                     ResponseWindow(),
+                    Container(
+                      alignment: Alignment.topCenter,
+                      width: 300,
+                      child: Image.network('https://i.imgur.com/lk6WHIW.jpg'),
+                    ),
                   ],
                 ),
               )
