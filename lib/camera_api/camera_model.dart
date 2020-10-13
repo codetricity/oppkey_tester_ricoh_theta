@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:http/http.dart' as http;
+import 'package:theta_req_res/notifiers/camera_notifier.dart';
+import 'dart:convert';
 import 'package:theta_req_res/notifiers/response_notifier.dart';
 import 'package:theta_req_res/notifiers/request_notifier.dart';
 import 'package:theta_req_res/utils/format_json.dart';
-import 'package:http/http.dart' as http;
 
-class InfoButton extends StatelessWidget {
-  const InfoButton({
+class CameraModel extends StatelessWidget {
+  const CameraModel({
     Key key,
   }) : super(key: key);
 
@@ -15,14 +17,19 @@ class InfoButton extends StatelessWidget {
     return RaisedButton(
       onPressed: () async {
         var url = 'http://192.168.1.1/osc/info';
-        var formattedResponse;
         try {
           var fullResponse = await http.get(url);
-          formattedResponse = formatJson('${fullResponse.body}');
-          context.read<ResponseNotifier>().updateResponse(formattedResponse);
+          var body = jsonDecode(fullResponse.body);
+          var model = body["model"];
+          print(model);
+          context
+              .read<ResponseNotifier>()
+              .updateResponse('You are using a $model');
           context
               .read<RequestNotifier>()
               .updateRequest('${fullResponse.request}');
+          context.read<CameraNotifier>().updateModel(model);
+          context.read<CameraNotifier>().setAppIntialized();
         } catch (error) {
           context
               .read<ResponseNotifier>()
@@ -32,7 +39,7 @@ class InfoButton extends StatelessWidget {
               .updateRequest('Request failed. \n\n Attempted URL:\n $url');
         }
       },
-      child: Text('info'),
+      child: Text('start'),
     );
   }
 }

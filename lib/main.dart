@@ -4,11 +4,13 @@ import 'package:panorama/panorama.dart';
 import 'package:http/http.dart' as http;
 import 'package:theta_req_res/notifiers/response_notifier.dart';
 import 'package:theta_req_res/notifiers/request_notifier.dart';
+import 'package:theta_req_res/notifiers/camera_notifier.dart';
 import 'package:theta_req_res/camera_api/info_button.dart';
 import 'package:theta_req_res/camera_api/state_button.dart';
 import 'package:theta_req_res/camera_api/take_picture.dart';
 import 'package:theta_req_res/windows/request_window.dart';
 import 'package:theta_req_res/windows/response_window.dart';
+import 'package:theta_req_res/camera_api/camera_model.dart';
 
 void main() {
   runApp(
@@ -16,6 +18,7 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (_) => ResponseNotifier()),
         ChangeNotifierProvider(create: (_) => RequestNotifier()),
+        ChangeNotifierProvider(create: (_) => CameraNotifier()),
       ],
       child: MyApp(),
     ),
@@ -25,8 +28,6 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    String cameraModel = null;
-
     return MaterialApp(
       title: 'THETA Req Res',
       theme: ThemeData(
@@ -36,7 +37,10 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.dark,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('THETA Req Res'),
+          title: Provider.of<CameraNotifier>(context).appInitialized
+              ? Text(
+                  'Oppkey Tester for RICOH THETA - Currently testing a ${Provider.of<CameraNotifier>(context).model}')
+              : Text('Press start to begin'),
         ),
         body: Center(
           child: Column(
@@ -48,6 +52,7 @@ class MyApp extends StatelessWidget {
                   InfoButton(),
                   StateButton(),
                   TakePictureButton(),
+                  CameraModel(),
                 ],
               ),
               Row(
