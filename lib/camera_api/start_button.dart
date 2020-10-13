@@ -7,8 +7,8 @@ import 'package:theta_req_res/notifiers/response_notifier.dart';
 import 'package:theta_req_res/notifiers/request_notifier.dart';
 import 'package:theta_req_res/utils/format_json.dart';
 
-class CameraModel extends StatelessWidget {
-  const CameraModel({
+class StartButton extends StatelessWidget {
+  const StartButton({
     Key key,
   }) : super(key: key);
 
@@ -30,10 +30,10 @@ class CameraModel extends StatelessWidget {
               .updateRequest('${fullResponse.request}');
           context.read<CameraNotifier>().updateModel(model);
           context.read<CameraNotifier>().setAppIntialized();
+          Navigator.pushNamed(context, '/status');
         } catch (error) {
-          context
-              .read<ResponseNotifier>()
-              .updateResponse('request failed.\n\n Error code:\n $error');
+          context.read<ResponseNotifier>().updateResponse(
+              'Please connect to camera Wi-Fi. The camera is the hotspot. \n\n Error:\n $error');
           context
               .read<RequestNotifier>()
               .updateRequest('Request failed. \n\n Attempted URL:\n $url');
