@@ -34,10 +34,32 @@ class HomeScreen extends StatelessWidget {
             ),
             Container(
               height: 200,
+              width: double.infinity,
               child: Text(
                 Provider.of<ResponseNotifier>(context).responseText,
                 style: TextStyle(fontSize: 20),
               ),
+            ),
+            Row(
+              children: [
+                Image.asset('assets/images/camera.png'),
+                SizedBox(
+                  width: 100,
+                ),
+                Column(
+                  children: [
+                    Text(
+                        'Oppkey Tester for RICOH THETA\ninfo@oppkey.com\ncommunity info - https://theta360.guide'),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      'Before you begin, please connect your computer to your \nRICOH THETA camera with Wi-Fi',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ],
+                ),
+              ],
             ),
             // request, response
           ],

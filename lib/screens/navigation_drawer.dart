@@ -16,6 +16,12 @@ class NavigationDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/status');
             },
           ),
+          ListTile(
+            title: Text('Jesse'),
+            onTap: () {
+              Navigator.pushNamed(context, '/jesse');
+            },
+          ),
         ],
       ),
     );

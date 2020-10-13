@@ -4,6 +4,7 @@ import 'package:theta_req_res/notifiers/response_notifier.dart';
 import 'package:theta_req_res/notifiers/request_notifier.dart';
 import 'package:theta_req_res/notifiers/camera_notifier.dart';
 import 'package:theta_req_res/screens/home_screen.dart';
+import 'package:theta_req_res/screens/jesse_screen.dart';
 import 'package:theta_req_res/screens/status_screen.dart';
 
 void main() {
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => HomeScreen(),
         '/status': (context) => StatusScreen(),
+        '/jesse': (context) => JesseScreen(),
       },
       initialRoute: '/',
     );
