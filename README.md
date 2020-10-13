@@ -1,4 +1,4 @@
-# RICOH THETA Request and Response Tester
+# Oppkey Tester for RICOH THETA Cameras
 
 Tester for RICOH THETA 360 camera Wi-Fi APIs.
 

@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'THETA Req Res',
+      title: 'Oppkey Tester for RICOH THETA',
       theme: ThemeData(
         brightness: Brightness.light,
       ),
