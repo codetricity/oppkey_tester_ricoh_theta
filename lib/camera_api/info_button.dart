@@ -15,12 +15,22 @@ class InfoButton extends StatelessWidget {
     return RaisedButton(
       onPressed: () async {
         var url = 'http://192.168.1.1/osc/info';
-        var fullResponse = await http.get(url);
-        var formattedResponse = formatJson('${fullResponse.body}');
-        context.read<ResponseNotifier>().updateResponse(formattedResponse);
-        context
-            .read<RequestNotifier>()
-            .updateRequest('${fullResponse.request}');
+        var formattedResponse;
+        try {
+          var fullResponse = await http.get(url);
+          formattedResponse = formatJson('${fullResponse.body}');
+          context.read<ResponseNotifier>().updateResponse(formattedResponse);
+          context
+              .read<RequestNotifier>()
+              .updateRequest('${fullResponse.request}');
+        } catch (error) {
+          context
+              .read<ResponseNotifier>()
+              .updateResponse('request failed.\n\n Error code:\n $error');
+          context
+              .read<RequestNotifier>()
+              .updateRequest('Request failed. \n\n Attempted URL:\n $url');
+        }
       },
       child: Text('info'),
     );
