@@ -23,5 +23,11 @@ $  flutter channel dev
 
 Make sure that you have the latest desktop support and that it’s enabled
 ```
-$  flutter config --enable-macos-desktop
+$ flutter config --enable-macos-desktop
+$ flutter config --enable-windows-desktop
 ```
+
+## Windows
+
+Visual Studio with Desktop development with C++.  Note that this is not the same as VS Code.
+
