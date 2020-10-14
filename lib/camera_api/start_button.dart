@@ -5,7 +5,7 @@ import 'package:theta_req_res/notifiers/camera_notifier.dart';
 import 'dart:convert';
 import 'package:theta_req_res/notifiers/response_notifier.dart';
 import 'package:theta_req_res/notifiers/request_notifier.dart';
-import 'package:theta_req_res/utils/format_json.dart';
+import 'package:theta_req_res/camera_api/helpers/update_last_file_uri.dart';
 
 class StartButton extends StatelessWidget {
   const StartButton({
@@ -32,23 +32,8 @@ class StartButton extends StatelessWidget {
           context.read<CameraNotifier>().updateModel(model);
           context.read<CameraNotifier>().setAppIntialized();
 
-          var url2 = 'http://192.168.1.1/osc/commands/execute';
-          var body2 = jsonEncode({
-            'name': 'camera.listFiles',
-            'parameters': {
-              'fileType': 'image',
-              'entryCount': 1,
-              'maxThumbSize': 0,
-            }
-          });
-          var response2 = await http.post(url2,
-              headers: {"Content-Type": "application/json;charset=utf-8"},
-              body: body2);
-          var responseBody2 = jsonDecode(response2.body);
-          var latestFileUri =
-              (responseBody2['results']['entries'][0]['fileUrl']);
-          Provider.of<CameraNotifier>(context, listen: false)
-              .updateFileUri(latestFileUri);
+          await updateLastFileUri(context);
+          //   print(Provider.of<CameraNotifier>(context, listen: false).fileUri);
 
           Navigator.pushNamed(context, '/status');
         } catch (error) {

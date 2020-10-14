@@ -20,9 +20,11 @@ class CameraNotifier with ChangeNotifier {
 
   void setAppIntialized() {
     _appInitialized = true;
+    notifyListeners();
   }
 
   void updateFileUri(fileUri) {
     _fileUri = fileUri;
+    notifyListeners();
   }
 }

@@ -7,6 +7,7 @@ import 'package:theta_req_res/camera_api/take_picture.dart';
 import 'package:theta_req_res/windows/request_window.dart';
 import 'package:theta_req_res/windows/response_window.dart';
 import 'package:theta_req_res/screens/navigation_drawer.dart';
+import 'package:theta_req_res/camera_api/helpers/update_last_file_uri.dart';
 
 class StatusScreen extends StatelessWidget {
   const StatusScreen({
@@ -33,6 +34,12 @@ class StatusScreen extends StatelessWidget {
                 InfoButton(),
                 StateButton(),
                 TakePictureButton(),
+                RaisedButton(
+                  onPressed: () {
+                    updateLastFileUri(context);
+                  },
+                  child: Text('Update Image'),
+                )
               ],
             ),
             Row(
