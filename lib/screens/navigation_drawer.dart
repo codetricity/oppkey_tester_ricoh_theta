@@ -17,6 +17,12 @@ class NavigationDrawer extends StatelessWidget {
             },
           ),
           ListTile(
+            title: Text('View'),
+            onTap: () {
+              Navigator.pushNamed(context, '/view');
+            },
+          ),
+          ListTile(
             title: Text('Jesse'),
             onTap: () {
               Navigator.pushNamed(context, '/jesse');
