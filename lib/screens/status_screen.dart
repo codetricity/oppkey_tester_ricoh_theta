@@ -88,7 +88,7 @@ class StatusScreen extends StatelessWidget {
                     width: 300,
                     // child: Image.network('https://i.imgur.com/lk6WHIW.jpg'),
                     child: Image.network(
-                        Provider.of<CameraNotifier>(context).fileUri),
+                        '${Provider.of<CameraNotifier>(context).fileUri}?type=thumb'),
                   ),
                 ],
               ),
