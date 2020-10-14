@@ -79,7 +79,9 @@ class StatusScreen extends StatelessWidget {
                   Container(
                     alignment: Alignment.topCenter,
                     width: 300,
-                    child: Image.network('https://i.imgur.com/lk6WHIW.jpg'),
+                    // child: Image.network('https://i.imgur.com/lk6WHIW.jpg'),
+                    child: Image.network(
+                        Provider.of<CameraNotifier>(context).fileUri),
                   ),
                 ],
               ),
