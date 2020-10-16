@@ -12,10 +12,7 @@ class ImageScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Provider.of<CameraNotifier>(context).appInitialized
-            ? Text(
-                'Oppkey Tester for RICOH THETA - Showing ${Provider.of<CameraNotifier>(context).fileUri}')
-            : Text('Please reconnect your camera'),
+        title: Text('Showing last image taken'),
       ),
       body: Center(
         child: Panorama(

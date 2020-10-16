@@ -15,10 +15,7 @@ class JesseScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Provider.of<CameraNotifier>(context).appInitialized
-            ? Text(
-                'Oppkey Tester for RICOH THETA - Currently testing a ${Provider.of<CameraNotifier>(context).model}')
-            : Text('Press start to begin'),
+        title: Text('Jesse Screen'),
       ),
       drawer: NavigationDrawer(),
       body: Center(
