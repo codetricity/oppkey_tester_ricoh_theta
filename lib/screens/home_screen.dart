@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_req_res/notifiers/camera_notifier.dart';
 import 'package:theta_req_res/notifiers/response_notifier.dart';
-import 'package:theta_req_res/windows/response_window.dart';
 import 'package:theta_req_res/camera_api/start_button.dart';
 
 class HomeScreen extends StatelessWidget {

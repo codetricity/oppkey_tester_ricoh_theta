@@ -17,7 +17,7 @@ Future<void> updateLastFileUri(context) async {
       headers: {"Content-Type": "application/json;charset=utf-8"}, body: body2);
   var responseBody2 = jsonDecode(response2.body);
   var latestFileUri = (responseBody2['results']['entries'][0]['fileUrl']);
-
+  print(latestFileUri);
   Provider.of<CameraNotifier>(context, listen: false)
       .updateFileUri(latestFileUri);
 }

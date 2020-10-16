@@ -4,7 +4,6 @@ import 'package:http/http.dart' as http;
 import 'package:theta_req_res/notifiers/response_notifier.dart';
 import 'package:theta_req_res/notifiers/request_notifier.dart';
 import 'package:theta_req_res/utils/format_json.dart';
-import 'package:theta_req_res/camera_api/helpers/update_last_file_uri.dart';
 import 'dart:convert';
 
 class TakePictureButton extends StatelessWidget {

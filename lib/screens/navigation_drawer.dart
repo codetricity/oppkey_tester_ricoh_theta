@@ -23,6 +23,12 @@ class NavigationDrawer extends StatelessWidget {
             },
           ),
           ListTile(
+            title: Text('Files'),
+            onTap: () {
+              Navigator.pushNamed(context, '/files');
+            },
+          ),
+          ListTile(
             title: Text('Admin'),
             onTap: () {
               Navigator.pushNamed(context, '/admin');

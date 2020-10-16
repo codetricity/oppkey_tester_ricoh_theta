@@ -8,6 +8,7 @@ import 'package:theta_req_res/screens/image_screen.dart';
 import 'package:theta_req_res/screens/jesse_screen.dart';
 import 'package:theta_req_res/screens/status_screen.dart';
 import 'package:theta_req_res/screens/admin_screen.dart';
+import 'package:theta_req_res/screens/files_screen.dart';
 
 void main() {
   runApp(
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
         '/view': (context) => ImageScreen(),
         '/jesse': (context) => JesseScreen(),
         '/admin': (context) => AdminScreen(),
+        '/files': (context) => FilesScreen(),
       },
       initialRoute: '/',
     );

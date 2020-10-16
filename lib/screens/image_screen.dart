@@ -16,7 +16,21 @@ class ImageScreen extends StatelessWidget {
       ),
       body: Center(
         child: Panorama(
-          child: Image.network(Provider.of<CameraNotifier>(context).fileUri),
+          child: Image.network(
+            Provider.of<CameraNotifier>(context).fileUri,
+            loadingBuilder: (BuildContext context, Widget child,
+                ImageChunkEvent loadingProgress) {
+              if (loadingProgress == null) return child;
+              return Center(
+                child: CircularProgressIndicator(
+                  value: loadingProgress.expectedTotalBytes != null
+                      ? loadingProgress.cumulativeBytesLoaded /
+                          loadingProgress.expectedTotalBytes
+                      : null,
+                ),
+              );
+            },
+          ),
           animSpeed: 0.0,
         ),
       ),
