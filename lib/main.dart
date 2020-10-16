@@ -7,6 +7,7 @@ import 'package:theta_req_res/screens/home_screen.dart';
 import 'package:theta_req_res/screens/image_screen.dart';
 import 'package:theta_req_res/screens/jesse_screen.dart';
 import 'package:theta_req_res/screens/status_screen.dart';
+import 'package:theta_req_res/screens/admin_screen.dart';
 
 void main() {
   runApp(
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         '/status': (context) => StatusScreen(),
         '/view': (context) => ImageScreen(),
         '/jesse': (context) => JesseScreen(),
+        '/admin': (context) => AdminScreen(),
       },
       initialRoute: '/',
     );
