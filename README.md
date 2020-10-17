@@ -8,7 +8,9 @@ Tester for RICOH THETA 360 camera Wi-Fi APIs.
 
 ![panorama](doc/image/panorama.gif)
 
+## Plan
 
+* [features](doc/plan/features.md)
 
 ## Install
 
