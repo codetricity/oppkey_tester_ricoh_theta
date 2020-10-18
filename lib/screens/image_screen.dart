@@ -12,7 +12,8 @@ class ImageScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Showing last image taken'),
+        title: Text('Showing last image taken - ' +
+            'battery: ${Provider.of<CameraNotifier>(context).battery}'),
       ),
       body: Center(
         child: Panorama(

@@ -46,6 +46,7 @@ class HomeScreen extends StatelessWidget {
                   width: 100,
                 ),
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
                         'Oppkey Tester for RICOH THETA\ninfo@oppkey.com\ncommunity info - https://theta360.guide'),
@@ -56,6 +57,10 @@ class HomeScreen extends StatelessWidget {
                       'Before you begin, please connect your computer to your \nRICOH THETA camera with Wi-Fi',
                       style: TextStyle(fontSize: 20),
                     ),
+                    Text(
+                        'If you are unable to connect, you can reset the camera Wi-Fi by \n'),
+                    Text(
+                        'pressing and holding down the Wi-Fi button for 18 seconds'),
                   ],
                 ),
               ],

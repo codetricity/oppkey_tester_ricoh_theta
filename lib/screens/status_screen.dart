@@ -8,6 +8,7 @@ import 'package:theta_req_res/windows/request_window.dart';
 import 'package:theta_req_res/windows/response_window.dart';
 import 'package:theta_req_res/screens/navigation_drawer.dart';
 import 'package:theta_req_res/camera_api/helpers/update_last_file_uri.dart';
+import 'package:theta_req_res/camera_api/test_button.dart';
 
 class StatusScreen extends StatelessWidget {
   const StatusScreen({
@@ -18,7 +19,16 @@ class StatusScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Status of ${Provider.of<CameraNotifier>(context).model}'),
+        title: Text(
+            'Status of ${Provider.of<CameraNotifier>(context).model} - ' +
+                'battery: ${Provider.of<CameraNotifier>(context).battery}'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.battery_full),
+            onPressed: () {},
+            tooltip: '${Provider.of<CameraNotifier>(context).battery}',
+          )
+        ],
       ),
       drawer: NavigationDrawer(),
       body: Center(
@@ -36,7 +46,8 @@ class StatusScreen extends StatelessWidget {
                     updateLastFileUri(context);
                   },
                   child: Text('Update Image'),
-                )
+                ),
+                TestButton(),
               ],
             ),
             Row(

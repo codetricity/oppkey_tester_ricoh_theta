@@ -6,6 +6,7 @@ import 'dart:convert';
 import 'package:theta_req_res/notifiers/response_notifier.dart';
 import 'package:theta_req_res/notifiers/request_notifier.dart';
 import 'package:theta_req_res/camera_api/helpers/update_last_file_uri.dart';
+import 'package:theta_req_res/camera_api/helpers/update_battery_level.dart';
 
 class StartButton extends StatelessWidget {
   const StartButton({
@@ -34,6 +35,8 @@ class StartButton extends StatelessWidget {
 
           await updateLastFileUri(context);
           //   print(Provider.of<CameraNotifier>(context, listen: false).fileUri);
+
+          await updateBatteryLevel(context);
 
           Navigator.pushNamed(context, '/status');
         } catch (error) {

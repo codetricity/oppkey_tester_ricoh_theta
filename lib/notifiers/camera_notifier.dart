@@ -8,11 +8,15 @@ class CameraNotifier with ChangeNotifier {
 
   String _model = "";
   var _fileUri = "";
+  double _battery;
+
+  // getters
   String get model => _model;
   bool get appInitialized => _appInitialized;
-
   dynamic get fileUri => _fileUri;
+  double get battery => _battery;
 
+// update
   void updateModel(model) {
     _model = model;
     notifyListeners();
@@ -25,6 +29,11 @@ class CameraNotifier with ChangeNotifier {
 
   void updateFileUri(fileUri) {
     _fileUri = fileUri;
+    notifyListeners();
+  }
+
+  void updateBattery(batteryLevel) {
+    _battery = batteryLevel;
     notifyListeners();
   }
 }

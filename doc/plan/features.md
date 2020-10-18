@@ -13,3 +13,7 @@ just show total.
 ## Settings Management
 
 * adjust reset settings to make it work with SC2.  This would be good for an article.
+
+## Camera Status
+
+* check battery

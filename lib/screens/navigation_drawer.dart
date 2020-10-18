@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:theta_req_res/camera_api/helpers/update_battery_level.dart';
 
 class NavigationDrawer extends StatelessWidget {
   const NavigationDrawer({
@@ -19,6 +20,7 @@ class NavigationDrawer extends StatelessWidget {
           ListTile(
             title: Text('View'),
             onTap: () {
+              updateBatteryLevel(context);
               Navigator.pushNamed(context, '/view');
             },
           ),
