@@ -16,4 +16,9 @@ just show total.
 
 ## Camera Status
 
-* check battery
+* check battery. change icon
+* uptime
+
+## Admin
+
+* when camera reboots, display notice to reconnect Wi-Fi
