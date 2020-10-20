@@ -2,7 +2,6 @@ test
 linux
 ios
 android
-/windows
 
 # Miscellaneous
 *.class
