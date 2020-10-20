@@ -6,6 +6,7 @@ import 'package:theta_req_res/windows/request_window.dart';
 import 'package:theta_req_res/windows/response_window.dart';
 import 'package:theta_req_res/screens/navigation_drawer.dart';
 import 'package:theta_req_res/camera_api/reset_button.dart';
+import 'package:theta_req_res/camera_api/disable_sleep_button.dart';
 
 class AdminScreen extends StatelessWidget {
   const AdminScreen({
@@ -26,7 +27,7 @@ class AdminScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                InfoButton(),
+                DisableSleepButton(),
                 ResetButton(),
               ],
             ),

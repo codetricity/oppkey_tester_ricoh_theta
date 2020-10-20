@@ -9,6 +9,7 @@ import 'package:theta_req_res/windows/response_window.dart';
 import 'package:theta_req_res/screens/navigation_drawer.dart';
 import 'package:theta_req_res/camera_api/helpers/update_last_file_uri.dart';
 import 'package:theta_req_res/camera_api/test_button.dart';
+import 'package:theta_req_res/windows/thumb_window.dart';
 
 class StatusScreen extends StatelessWidget {
   const StatusScreen({
@@ -91,13 +92,7 @@ class StatusScreen extends StatelessWidget {
                 children: [
                   RequestWindow(),
                   ResponseWindow(),
-                  Container(
-                    alignment: Alignment.topCenter,
-                    width: 300,
-                    // child: Image.network('https://i.imgur.com/lk6WHIW.jpg'),
-                    child: Image.network(
-                        '${Provider.of<CameraNotifier>(context).fileUri}?type=thumb'),
-                  ),
+                  ThumbWindow(),
                 ],
               ),
             )

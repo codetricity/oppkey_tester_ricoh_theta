@@ -27,6 +27,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // this disabled the "debug" banner in the upper right
+      debugShowCheckedModeBanner: false,
       title: 'Oppkey Tester for RICOH THETA',
       theme: ThemeData(
         brightness: Brightness.light,
