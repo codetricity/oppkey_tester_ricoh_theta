@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_req_res/notifiers/camera_notifier.dart';
-import 'package:theta_req_res/camera_api/info_button.dart';
 import 'package:theta_req_res/windows/request_window.dart';
 import 'package:theta_req_res/windows/response_window.dart';
 import 'package:theta_req_res/screens/navigation_drawer.dart';
-import 'package:theta_req_res/camera_api/reset_button.dart';
+import 'package:theta_req_res/camera_api/files/delete_all_button.dart';
 
 class FilesScreen extends StatelessWidget {
   const FilesScreen({
@@ -27,6 +26,7 @@ class FilesScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
+                DeleteAllButton(),
                 //TODO: put list files button here
               ],
             ),
