@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:theta_req_res/camera_api/helpers/update_battery_level.dart';
+import 'package:theta_req_res/notifiers/camera_notifier.dart';
+import 'package:provider/provider.dart';
+import 'package:theta_req_res/notifiers/camera_notifier.dart';
 
 class NavigationDrawer extends StatelessWidget {
   const NavigationDrawer({
@@ -36,6 +39,14 @@ class NavigationDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/admin');
             },
           ),
+          Provider.of<CameraNotifier>(context).model == 'RICOH THETA SC2'
+              ? ListTile(
+                  title: Text('SC2'),
+                  onTap: () {
+                    Navigator.pushNamed(context, '/sc2');
+                  },
+                )
+              : Container(),
           ListTile(
             title: Text('Jesse'),
             onTap: () {
