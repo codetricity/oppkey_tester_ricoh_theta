@@ -71,3 +71,14 @@ In this example app, I'm using this:
 ``` 
 fullURL?type=thumb
 ```
+
+## Android
+
+In `AndroidManifest.xml`
+
+```
+   <application
+        android:label="theta_req_res"
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true">
+```
