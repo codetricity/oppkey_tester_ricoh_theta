@@ -22,3 +22,8 @@ just show total.
 ## Admin
 
 * when camera reboots, display notice to reconnect Wi-Fi
+
+## Mobile Device Support
+
+Currently using `MediaQuery.of()` to get device width.
+Evaluation [responsive_framework](https://pub.dev/packages/responsive_framework) for potential use.
