@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:theta_req_res/notifiers/camera_notifier.dart';
 import 'package:theta_req_res/notifiers/response_notifier.dart';
 import 'package:theta_req_res/camera_api/start_button.dart';
+import 'package:theta_req_res/screens/home/home_screen_text.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
@@ -11,6 +12,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var device = MediaQuery.of(context).size;
+    print('device is ${device.width} pixels wide');
     return Scaffold(
       appBar: AppBar(
         title: Provider.of<CameraNotifier>(context).appInitialized
@@ -39,30 +42,26 @@ class HomeScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 20),
               ),
             ),
-            Row(
-              children: [
-                Image.asset('assets/images/camera.png'),
-                SizedBox(
-                  width: 100,
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Before you begin, please connect\n' +
-                          'your computer to your \nRICOH THETA camera with Wi-Fi\n',
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    Text('If you are unable to connect,\n' +
-                        'you can reset the camera Wi-Fi by \n' +
-                        'pressing and holding down the Wi-Fi \n' +
-                        'button for 18 seconds\n'),
-                    Text(
-                        'Oppkey Tester for RICOH THETA\ninfo@oppkey.com\ncommunity info - https://theta360.guide'),
-                  ],
-                ),
-              ],
-            ),
+            device.width > 1000
+                ? Row(
+                    children: [
+                      Image.asset('assets/images/camera.png'),
+                      SizedBox(
+                        width: 100,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          HomeText(),
+                        ],
+                      ),
+                    ],
+                  )
+                : Row(
+                    children: [
+                      HomeText(),
+                    ],
+                  ),
             // request, response
           ],
         ),
