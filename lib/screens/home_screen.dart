@@ -14,8 +14,8 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Provider.of<CameraNotifier>(context).appInitialized
-            ? Text(
-                'Oppkey Tester for RICOH THETA - Currently testing a ${Provider.of<CameraNotifier>(context).model}')
+            ? Text('Oppkey Tester for RICOH THETA - ' +
+                ' Currently testing a ${Provider.of<CameraNotifier>(context).model}')
             : Text('Press start to begin'),
       ),
       body: Center(
@@ -49,18 +49,16 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                        'Oppkey Tester for RICOH THETA\ninfo@oppkey.com\ncommunity info - https://theta360.guide'),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      'Before you begin, please connect your computer to your \nRICOH THETA camera with Wi-Fi',
+                      'Before you begin, please connect\n' +
+                          'your computer to your \nRICOH THETA camera with Wi-Fi\n',
                       style: TextStyle(fontSize: 20),
                     ),
+                    Text('If you are unable to connect,\n' +
+                        'you can reset the camera Wi-Fi by \n' +
+                        'pressing and holding down the Wi-Fi \n' +
+                        'button for 18 seconds\n'),
                     Text(
-                        'If you are unable to connect, you can reset the camera Wi-Fi by \n'),
-                    Text(
-                        'pressing and holding down the Wi-Fi button for 18 seconds'),
+                        'Oppkey Tester for RICOH THETA\ninfo@oppkey.com\ncommunity info - https://theta360.guide'),
                   ],
                 ),
               ],
