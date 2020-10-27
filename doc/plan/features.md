@@ -1,5 +1,11 @@
 # Plan for Features
 
+## Thumbnail Listing
+
+Having problems listing thumbnails.  Need to change the
+way the http requests are made as it's likely the THETA
+can't handle rapid requests.
+
 ## LivePreview
 
 Need to detect model and change code to get stream based on the model.
