@@ -33,3 +33,5 @@ just show total.
 
 Currently using `MediaQuery.of()` to get device width.
 Evaluation [responsive_framework](https://pub.dev/packages/responsive_framework) for potential use.
+
+Change status screen to support Android. --Jesse
