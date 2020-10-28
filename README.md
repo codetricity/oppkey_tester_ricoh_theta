@@ -82,3 +82,9 @@ In `AndroidManifest.xml`
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true">
 ```
+
+## Notes on Forking
+```
+git fetch upstream
+git merge upstream/main
+```
