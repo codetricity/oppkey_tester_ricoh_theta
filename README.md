@@ -83,7 +83,12 @@ In `AndroidManifest.xml`
         android:usesCleartextTraffic="true">
 ```
 
-## Notes on Forking
+## Collaborative Work Process
+
+### Sync Local Repo with Upstream (master repo)
+
+If the codetricity repo is ahead of jcasman, then fetch the upstream (codetricity) repo before you edit your code locally.
+
 ```
 git fetch upstream
 git merge upstream/main
