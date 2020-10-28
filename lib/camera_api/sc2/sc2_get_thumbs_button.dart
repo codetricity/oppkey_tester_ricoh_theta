@@ -44,6 +44,8 @@ class Sc2GetThumbsButton extends StatelessWidget {
           var entries =
               await jsonDecode(fullResponse.body)['results']['entries'];
           //TODO:fix below.  This isn't working.
+          // Multiple rapid calls for the image thumbnails
+          // is not working.
           await entries.forEach((element) async {
             urls.add(element['fileUrl']);
             var thumbResponse = await client
