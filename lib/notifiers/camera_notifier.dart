@@ -10,6 +10,7 @@ class CameraNotifier with ChangeNotifier {
   var _fileUri = "";
   var _allFiles = [];
   double _battery;
+  List<dynamic> _lastFiveThumbs = [];
 
   // getters
   String get model => _model;
@@ -17,6 +18,7 @@ class CameraNotifier with ChangeNotifier {
   dynamic get fileUri => _fileUri;
   double get battery => _battery;
   dynamic get allFiles => _allFiles;
+  List<dynamic> get lastFiveThumbs => _lastFiveThumbs;
 
 // update
   void updateModel(model) {
@@ -41,6 +43,11 @@ class CameraNotifier with ChangeNotifier {
 
   void updateAllFiles(allFiles) {
     _allFiles = allFiles;
+    notifyListeners();
+  }
+
+  void updateLastFiveThumbs(lastFiveThumbs) {
+    _lastFiveThumbs = lastFiveThumbs;
     notifyListeners();
   }
 }

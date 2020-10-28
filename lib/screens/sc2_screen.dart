@@ -4,7 +4,7 @@ import 'package:theta_req_res/notifiers/camera_notifier.dart';
 import 'package:theta_req_res/windows/request_window.dart';
 import 'package:theta_req_res/windows/response_window.dart';
 import 'package:theta_req_res/screens/navigation_drawer.dart';
-import 'package:theta_req_res/camera_api/files/delete_all_button.dart';
+import 'package:theta_req_res/camera_api/sc2/sc2_get_thumbs_button.dart';
 
 class Sc2Screen extends StatelessWidget {
   const Sc2Screen({
@@ -26,6 +26,7 @@ class Sc2Screen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
+                Sc2GetThumbsButton(),
                 //TODO: put SC2-specific commands here
               ],
             ),
@@ -74,8 +75,16 @@ class Sc2Screen extends StatelessWidget {
                     alignment: Alignment.topCenter,
                     width: 300,
                     // child: Image.network('https://i.imgur.com/lk6WHIW.jpg'),
-                    child: Image.network(
-                        '${Provider.of<CameraNotifier>(context).fileUri}?type=thumb'),
+                    // child: Image.network(
+                    //     '${Provider.of<CameraNotifier>(context).fileUri}?type=thumb'),
+                    child: Provider.of<CameraNotifier>(context)
+                                .lastFiveThumbs
+                                .length <
+                            5
+                        ? Text('press button to show thumbs.\n' +
+                            'if no thumbs appear, you may not have 5 images')
+                        : Image.memory(Provider.of<CameraNotifier>(context)
+                            .lastFiveThumbs[0]),
                   ),
                 ],
               ),
