@@ -13,7 +13,7 @@ class JesseScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Jesse Screen'),
+        title: Text('Jesse BIG Screen'),
       ),
       drawer: NavigationDrawer(),
       body: Center(
@@ -24,6 +24,7 @@ class JesseScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 // create button and then put button on this row
+                InfoButton(),
                 InfoButton(),
               ],
             ),
