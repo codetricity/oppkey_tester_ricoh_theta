@@ -1,5 +1,20 @@
 # Plan for Features
 
+## Jesse
+
+Focus on improving the look and usability of the application.
+
+* layout per screen
+  * different layouts for mobile, tablet, desktop.  Our primary focus is desktop layout. 
+    use mediaquery to get all the layouts consistent.
+* organization of elements on each screen
+* user interaction with app
+  * spinner
+* colors
+  * develop app theme
+* fonts
+  * include in app theme
+
 ## Thumbnail Listing
 
 Having problems listing thumbnails.  Need to change the
