@@ -23,7 +23,7 @@ class Sc2GetThumbsButton extends StatelessWidget {
           'name': 'camera.listFiles',
           'parameters': {
             'fileType': 'image',
-            'entryCount': 5,
+            'entryCount': 1,
             'maxThumbSize': 0,
             '_detail': false,
           }

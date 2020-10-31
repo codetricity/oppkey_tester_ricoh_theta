@@ -18,6 +18,5 @@ Future<void> updateFileList(context) async {
   var responseBody = jsonDecode(response.body);
   var allFiles = (responseBody['results']['entries']);
   print(allFiles);
-  // Provider.of<CameraNotifier>(context, listen: false)
-  //     .updateFileUri(latestFileUri);
+  Provider.of<CameraNotifier>(context, listen: false).updateAllFiles(allFiles);
 }
