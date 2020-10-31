@@ -2,7 +2,20 @@
 
 ## Jesse
 
-Focus on improving the look and usability of the application.
+* Focus on improving the look and usability of the application. 
+* Go beyond the ability to change the screen layout or color of button to
+include:
+  * does the change improve the app?  Or, is it just a test for your own knowledge? 
+    Aim to improve the app, not just for you to learn.  Our goal is to
+    eventually build our own software and we want it to look good and be usable
+  * Is the look and feel of the app the best you can do?  Is the size, layout, color,
+    and font a representation of all the skills and ability you have applied to the
+    problem?  Or, are you justifying a clunky, not-beautiful, app by saying that you're
+    building it for yourself (not true) or that you could do better if you tried
+    harder or had more time (multitude of reasons).
+    At any point in time, aim for the best you can do in the time you have.
+
+### Areas
 
 * layout per screen
   * different layouts for mobile, tablet, desktop.  Our primary focus is desktop layout. 
