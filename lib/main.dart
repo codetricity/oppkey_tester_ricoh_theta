@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         primaryColor: Colors.red[300],
+        accentColor: Colors.red[800],
       ),
       themeMode: ThemeMode.dark,
       routes: {
