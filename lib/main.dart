@@ -34,7 +34,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.light,
       ),
-      darkTheme: ThemeData(brightness: Brightness.dark),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Colors.red[300],
+      ),
       themeMode: ThemeMode.dark,
       routes: {
         '/': (context) => HomeScreen(),

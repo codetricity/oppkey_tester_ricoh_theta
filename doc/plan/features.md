@@ -23,9 +23,10 @@ include:
 * organization of elements on each screen
 * user interaction with app
   * spinner
-* colors
-  * develop app theme
-* fonts
+* theme development
+  * https://flutter.dev/docs/cookbook/design/themes
+  * colors
+  * fonts
   * include in app theme
 
 ## Thumbnail Listing
