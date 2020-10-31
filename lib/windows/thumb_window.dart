@@ -12,6 +12,7 @@ class ThumbWindow extends StatelessWidget {
     return Container(
       alignment: Alignment.topCenter,
       width: 300,
+      height: 150,
       // child: Image.network('https://i.imgur.com/lk6WHIW.jpg'),
       child: ListView(children: [
         Image.network(

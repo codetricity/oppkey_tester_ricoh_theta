@@ -39,30 +39,32 @@ class JesseScreen extends StatelessWidget {
                     ],
                   )
                 // this is the mobile view
-                : Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          InfoButton(),
-                          StateButton(),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          InfoButton(),
-                          TakePictureButton(),
-                          TakePictureButton(),
-                        ],
-                      ),
-                      Text('Show picture here'),
-                      Row(
-                        children: [
-                          ResponseWindow(),
-                        ],
-                      )
-                    ],
+                : Expanded(
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            InfoButton(),
+                            StateButton(),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            InfoButton(),
+                            TakePictureButton(),
+                            TakePictureButton(),
+                          ],
+                        ),
+                        Expanded(child: ThumbWindow()),
+                        Row(
+                          children: [
+                            ResponseWindow(),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
 
             device.width > 1000
@@ -93,17 +95,18 @@ class JesseScreen extends StatelessWidget {
               height: 12,
             ),
             // request, response, and image windows
-            Expanded(
-              child: device.width > 1000
-                  ? Row(
+            device.width > 1000
+                ? Expanded(
+                    child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         RequestWindow(),
                         ResponseWindow(),
+                        ThumbWindow(),
                       ],
-                    )
-                  : Row(),
-            )
+                    ),
+                  )
+                : Row()
           ],
         ),
       ),
