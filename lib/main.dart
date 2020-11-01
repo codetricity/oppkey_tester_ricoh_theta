@@ -33,13 +33,14 @@ class MyApp extends StatelessWidget {
       title: 'Oppkey Tester for RICOH THETA',
       theme: ThemeData(
         brightness: Brightness.light,
+        primaryColor: Colors.red[300],
+        accentColor: Colors.red[800],
+        buttonColor: Colors.lightGreen[200],
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
-        primaryColor: Colors.red[300],
-        accentColor: Colors.red[800],
       ),
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
       routes: {
         '/': (context) => HomeScreen(),
         '/status': (context) => StatusScreen(),
