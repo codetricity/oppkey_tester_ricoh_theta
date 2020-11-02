@@ -6,8 +6,7 @@ import 'package:theta_req_res/windows/request_window.dart';
 import 'package:theta_req_res/windows/response_window.dart';
 import 'package:theta_req_res/screens/navigation_drawer.dart';
 import 'package:theta_req_res/windows/thumb_window.dart';
-import 'package:theta_req_res/camera_api/helpers/update_last_file_uri.dart';
-
+import 'package:theta_req_res/camera_api/update_last_file_uri_button.dart';
 
 class JesseScreen extends StatelessWidget {
   const JesseScreen({
@@ -16,6 +15,7 @@ class JesseScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // this variable is needed to get the size of the device
     var device = MediaQuery.of(context).size;
     print('On the Jesse screen, the device is ${device.width} pixels wide');
     return Scaffold(
@@ -27,6 +27,7 @@ class JesseScreen extends StatelessWidget {
         child: Column(
           children: [
             // row of buttons to send commands to camera
+            // if it's bigger than 1000 pixels, it's a desktop
             device.width > 1000
                 ? Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -56,14 +57,11 @@ class JesseScreen extends StatelessWidget {
                           children: [
                             InfoButton(),
                             TakePictureButton(),
-                            RaisedButton(
-                              onPressed: () {
-                                updateLastFileUri(context);
-                              },
-                              child: Text('Update Image'),
-                            ),                          ],
+                            UpdateLastFileUriButton(),
+                          ],
                         ),
-                        Expanded(child: Column(
+                        Expanded(
+                            child: Column(
                           children: [
                             ThumbWindow(),
                             Text('This is a new widget'),
@@ -78,7 +76,7 @@ class JesseScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-
+            // getting the device size again for windows row
             device.width > 1000
                 ? Row(
                     children: [
