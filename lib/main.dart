@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
         primaryColor: Colors.red[300],
         accentColor: Colors.red[800],
-        buttonColor: Colors.lightGreen[200],
+        buttonColor: Colors.lightGreen[300],
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
