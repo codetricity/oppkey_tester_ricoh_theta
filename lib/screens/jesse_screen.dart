@@ -60,19 +60,8 @@ class JesseScreen extends StatelessWidget {
                             UpdateLastFileUriButton(),
                           ],
                         ),
-                        Expanded(
-                            child: Column(
-                          children: [
-                            ThumbWindow(),
-                            Text('This is a new widget'),
-                            Expanded(child: ResponseWindow()),
-                          ],
-                        )),
-                        Row(
-                          children: [
-                            ResponseWindow(),
-                          ],
-                        )
+                        Container(child: ThumbWindow()),
+                        Container(height: 300.0, child: ResponseWindow())
                       ],
                     ),
                   ),
