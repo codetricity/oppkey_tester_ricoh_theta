@@ -6,6 +6,8 @@ import 'package:theta_req_res/windows/request_window.dart';
 import 'package:theta_req_res/windows/response_window.dart';
 import 'package:theta_req_res/screens/navigation_drawer.dart';
 import 'package:theta_req_res/windows/thumb_window.dart';
+import 'package:theta_req_res/camera_api/helpers/update_last_file_uri.dart';
+
 
 class JesseScreen extends StatelessWidget {
   const JesseScreen({
@@ -54,10 +56,20 @@ class JesseScreen extends StatelessWidget {
                           children: [
                             InfoButton(),
                             TakePictureButton(),
-                            TakePictureButton(),
-                          ],
+                            RaisedButton(
+                              onPressed: () {
+                                updateLastFileUri(context);
+                              },
+                              child: Text('Update Image'),
+                            ),                          ],
                         ),
-                        Expanded(child: ThumbWindow()),
+                        Expanded(child: Column(
+                          children: [
+                            ThumbWindow(),
+                            Text('This is a new widget'),
+                            Expanded(child: ResponseWindow()),
+                          ],
+                        )),
                         Row(
                           children: [
                             ResponseWindow(),
