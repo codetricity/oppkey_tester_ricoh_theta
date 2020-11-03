@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_req_res/notifiers/response_notifier.dart';
 import 'package:theta_req_res/notifiers/request_notifier.dart';
+import 'package:theta_req_res/notifiers/req_res_notifier.dart';
 import 'package:theta_req_res/utils/format_json.dart';
 import 'package:http/http.dart' as http;
 
@@ -16,13 +17,16 @@ class InfoButton extends StatelessWidget {
       onPressed: () async {
         var url = 'http://192.168.1.1/osc/info';
         var formattedResponse;
+        var formattedReqRes;
         try {
           var fullResponse = await http.get(url);
+          formattedReqRes = '${fullResponse.request} /n ${fullResponse.body}';
           formattedResponse = formatJson('${fullResponse.body}');
           context.read<ResponseNotifier>().updateResponse(formattedResponse);
           context
               .read<RequestNotifier>()
               .updateRequest('${fullResponse.request}');
+          context.read<ReqResNotifier>().updateReqRes(formattedReqRes);
         } catch (error) {
           context
               .read<ResponseNotifier>()

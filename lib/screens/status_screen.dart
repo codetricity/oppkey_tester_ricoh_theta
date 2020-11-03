@@ -6,6 +6,7 @@ import 'package:theta_req_res/camera_api/state_button.dart';
 import 'package:theta_req_res/camera_api/take_picture.dart';
 import 'package:theta_req_res/windows/request_window.dart';
 import 'package:theta_req_res/windows/response_window.dart';
+import 'package:theta_req_res/windows/req_res_window.dart';
 import 'package:theta_req_res/screens/navigation_drawer.dart';
 import 'package:theta_req_res/camera_api/helpers/update_last_file_uri.dart';
 import 'package:theta_req_res/camera_api/test_button.dart';
@@ -80,56 +81,51 @@ class StatusScreen extends StatelessWidget {
                           ],
                         ),
                         Container(child: ThumbWindow()),
-                        Container(height: 300.0, child: ResponseWindow())
+                        Container(height: 300.0, child: ReqResWindow())
                       ],
                     ),
                   ),
             // This is the end of the mobile view
-            Row(
-              children: [
-                Container(
-                  width: 300.0,
-                  child: Center(
-                    child: Text(
-                      'Request',
-                      style: TextStyle(fontSize: 28),
-                    ),
-                  ),
-                ),
-                Container(
-                  width: 300.0,
-                  child: Center(
-                    child: Text(
-                      'Response',
-                      style: TextStyle(fontSize: 28),
-                    ),
-                  ),
-                ),
-                Container(
-                  width: 300.0,
-                  child: Center(
-                    child: Text(
-                      'Last Image',
-                      style: TextStyle(fontSize: 28),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            device.width > 1000
+                ? Row(
+                    children: [
+                      Container(
+                        width: 300.0,
+                        child: Center(
+                          child: Text(
+                            'Response',
+                            style: TextStyle(fontSize: 28),
+                          ),
+                        ),
+                      ),
+                      // Container(
+                      //   width: 300.0,
+                      //   child: Center(
+                      //     child: Text(
+                      //       'Last Image',
+                      //       style: TextStyle(fontSize: 28),
+                      //     ),
+                      //   ),
+                      // ),
+                    ],
+                  )
+                : Row(),
             SizedBox(
               height: 12,
             ),
             // request, response, and image windows
-            Expanded(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  RequestWindow(),
-                  ResponseWindow(),
-                  ThumbWindow(),
-                ],
-              ),
-            )
+            device.width > 1000
+                ? Expanded(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        RequestWindow(),
+                        ResponseWindow(),
+                        ThumbWindow(),
+                      ],
+                    ),
+                  )
+                : Row(),
           ],
         ),
       ),

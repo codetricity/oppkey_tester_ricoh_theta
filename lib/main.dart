@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:theta_req_res/notifiers/response_notifier.dart';
 import 'package:theta_req_res/notifiers/request_notifier.dart';
 import 'package:theta_req_res/notifiers/camera_notifier.dart';
+import 'package:theta_req_res/notifiers/req_res_notifier.dart';
 import 'package:theta_req_res/screens/home_screen.dart';
 import 'package:theta_req_res/screens/image_screen.dart';
 import 'package:theta_req_res/screens/jesse_screen.dart';
@@ -18,6 +19,7 @@ void main() {
         ChangeNotifierProvider(create: (_) => ResponseNotifier()),
         ChangeNotifierProvider(create: (_) => RequestNotifier()),
         ChangeNotifierProvider(create: (_) => CameraNotifier()),
+        ChangeNotifierProvider(create: (_) => ReqResNotifier()),
       ],
       child: MyApp(),
     ),
