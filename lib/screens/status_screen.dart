@@ -6,6 +6,7 @@ import 'package:theta_req_res/camera_api/state_button.dart';
 import 'package:theta_req_res/camera_api/take_picture.dart';
 import 'package:theta_req_res/windows/request_window.dart';
 import 'package:theta_req_res/windows/response_window.dart';
+import 'package:theta_req_res/windows/req_res_window.dart';
 import 'package:theta_req_res/screens/navigation_drawer.dart';
 import 'package:theta_req_res/camera_api/helpers/update_last_file_uri.dart';
 import 'package:theta_req_res/camera_api/test_button.dart';
@@ -80,7 +81,7 @@ class StatusScreen extends StatelessWidget {
                           ],
                         ),
                         Container(child: ThumbWindow()),
-                        Container(height: 300.0, child: ResponseWindow())
+                        Container(height: 300.0, child: ReqResWindow())
                       ],
                     ),
                   ),
