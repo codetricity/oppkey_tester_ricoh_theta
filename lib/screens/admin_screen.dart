@@ -8,6 +8,7 @@ import 'package:theta_req_res/camera_api/reset_button.dart';
 import 'package:theta_req_res/camera_api/power/disable_sleep_button.dart';
 import 'package:theta_req_res/camera_api/power/show_sleep_delay_button.dart';
 import 'package:theta_req_res/camera_api/power/disable_power_off.dart';
+import 'package:theta_req_res/camera_api/power/show_off_delay_button.dart';
 
 class AdminScreen extends StatelessWidget {
   const AdminScreen({
@@ -31,6 +32,7 @@ class AdminScreen extends StatelessWidget {
                 DisableSleepButton(),
                 ShowSleepDelayButton(),
                 DisablePowerOffButton(),
+                ShowOffDelayButton(),
                 ResetButton(),
               ],
             ),
