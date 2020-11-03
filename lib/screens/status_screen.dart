@@ -18,6 +18,9 @@ class StatusScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // this variable is needed to get the size of the device
+    var device = MediaQuery.of(context).size;
+    print('On the Status screen, the device is ${device.width} pixels wide');
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -36,21 +39,52 @@ class StatusScreen extends StatelessWidget {
         child: Column(
           children: [
             // row of buttons to send commands to camera
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                InfoButton(),
-                StateButton(),
-                TakePictureButton(),
-                RaisedButton(
-                  onPressed: () {
-                    updateLastFileUri(context);
-                  },
-                  child: Text('Update Image'),
-                ),
-                TestButton(),
-              ],
-            ),
+            device.width > 1000
+                ? Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      InfoButton(),
+                      StateButton(),
+                      TakePictureButton(),
+                      RaisedButton(
+                        onPressed: () {
+                          updateLastFileUri(context);
+                        },
+                        child: Text('Update Image'),
+                      ),
+                      TestButton(),
+                    ],
+                  )
+                // This is the mobile view
+                // This was where the TODO was
+                : Expanded(
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            InfoButton(),
+                            StateButton(),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            TakePictureButton(),
+                            RaisedButton(
+                              onPressed: () {
+                                updateLastFileUri(context);
+                              },
+                              child: Text('Update Image'),
+                            ),
+                          ],
+                        ),
+                        Container(child: ThumbWindow()),
+                        Container(height: 300.0, child: ResponseWindow())
+                      ],
+                    ),
+                  ),
+            // This is the end of the mobile view
             Row(
               children: [
                 Container(
