@@ -85,42 +85,46 @@ class StatusScreen extends StatelessWidget {
                     ),
                   ),
             // This is the end of the mobile view
-            Row(
-              children: [
-                Container(
-                  width: 300.0,
-                  child: Center(
-                    child: Text(
-                      'Response',
-                      style: TextStyle(fontSize: 28),
-                    ),
-                  ),
-                ),
-                // Container(
-                //   width: 300.0,
-                //   child: Center(
-                //     child: Text(
-                //       'Last Image',
-                //       style: TextStyle(fontSize: 28),
-                //     ),
-                //   ),
-                // ),
-              ],
-            ),
+            device.width > 1000
+                ? Row(
+                    children: [
+                      Container(
+                        width: 300.0,
+                        child: Center(
+                          child: Text(
+                            'Response',
+                            style: TextStyle(fontSize: 28),
+                          ),
+                        ),
+                      ),
+                      // Container(
+                      //   width: 300.0,
+                      //   child: Center(
+                      //     child: Text(
+                      //       'Last Image',
+                      //       style: TextStyle(fontSize: 28),
+                      //     ),
+                      //   ),
+                      // ),
+                    ],
+                  )
+                : Row(),
             SizedBox(
               height: 12,
             ),
             // request, response, and image windows
-            Expanded(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  RequestWindow(),
-                  ResponseWindow(),
-                  ThumbWindow(),
-                ],
-              ),
-            )
+            device.width > 1000
+                ? Expanded(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        RequestWindow(),
+                        ResponseWindow(),
+                        ThumbWindow(),
+                      ],
+                    ),
+                  )
+                : Row(),
           ],
         ),
       ),
