@@ -18,6 +18,7 @@ class InfoButton extends StatelessWidget {
         var url = 'http://192.168.1.1/osc/info';
         var formattedResponse;
         var formattedReqRes;
+
         try {
           var fullResponse = await http.get(url);
           // formattedReqRes = '${fullResponse.request} /n ${fullResponse.body}';
@@ -38,6 +39,9 @@ class InfoButton extends StatelessWidget {
           context
               .read<RequestNotifier>()
               .updateRequest('Request failed. \n\n Attempted URL:\n $url');
+          context
+              .read<ReqResNotifier>()
+              .updateReqRes('request failed.\n\n Error code:\n $error');
         }
       },
       child: Text('info'),
