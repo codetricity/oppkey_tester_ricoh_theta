@@ -29,6 +29,10 @@ include:
   * fonts
   * include in app theme
 
+## Zoom of Images
+
+Assess [photo_view](https://pub.dev/packages/photo_view)
+
 ## Thumbnail Listing
 
 Having problems listing thumbnails.  Need to change the
