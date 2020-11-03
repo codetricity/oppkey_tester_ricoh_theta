@@ -56,11 +56,33 @@ class StatusScreen extends StatelessWidget {
                     ],
                   )
                 // This is the mobile view
-                : Row(
-                    children: [
-                      Text('Jesse to insert buttons here'),
-                      //TODO: Put buttons here
-                    ],
+                // This was where the TODO was
+                : Expanded(
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            InfoButton(),
+                            StateButton(),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            TakePictureButton(),
+                            RaisedButton(
+                              onPressed: () {
+                                updateLastFileUri(context);
+                              },
+                              child: Text('Update Image'),
+                            ),
+                          ],
+                        ),
+                        Container(child: ThumbWindow()),
+                        Container(height: 300.0, child: ResponseWindow())
+                      ],
+                    ),
                   ),
             // This is the end of the mobile view
             Row(
