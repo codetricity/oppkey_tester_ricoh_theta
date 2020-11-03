@@ -20,8 +20,12 @@ class InfoButton extends StatelessWidget {
         var formattedReqRes;
         try {
           var fullResponse = await http.get(url);
-          formattedReqRes = '${fullResponse.request} /n ${fullResponse.body}';
+          // formattedReqRes = '${fullResponse.request} /n ${fullResponse.body}';
           formattedResponse = formatJson('${fullResponse.body}');
+          formattedReqRes = 'REQUEST\n' +
+              fullResponse.request.toString() +
+              '\n\nRESPONSE\n' +
+              formattedResponse;
           context.read<ResponseNotifier>().updateResponse(formattedResponse);
           context
               .read<RequestNotifier>()
