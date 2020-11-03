@@ -80,11 +80,15 @@ class Sc2Screen extends StatelessWidget {
                     child: Provider.of<CameraNotifier>(context)
                                 .lastFiveThumbs
                                 .length <
-                            5
+                            1
                         ? Text('press button to show thumbs.\n' +
                             'if no thumbs appear, you may not have 5 images')
-                        : Image.memory(Provider.of<CameraNotifier>(context)
-                            .lastFiveThumbs[0]),
+                        : ListView(
+                            children: [
+                              Image.network(Provider.of<CameraNotifier>(context)
+                                  .lastFiveThumbs[0]),
+                            ],
+                          ),
                   ),
                 ],
               ),

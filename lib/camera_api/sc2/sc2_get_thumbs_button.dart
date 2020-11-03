@@ -16,58 +16,19 @@ class Sc2GetThumbsButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
-      onPressed: () async {
-        var url = 'http://192.168.1.1/osc/commands/execute';
-
-        Map data = {
-          'name': 'camera.listFiles',
-          'parameters': {
-            'fileType': 'image',
-            'entryCount': 1,
-            'maxThumbSize': 0,
-            '_detail': false,
-          }
-        };
-
-        var body = jsonEncode(data);
-        var urls = [];
+      onPressed: () {
+        List<dynamic> allFileUrls =
+            Provider.of<CameraNotifier>(context, listen: false).allFiles;
         List<dynamic> thumbs = [];
-        var client = http.Client();
-        Map<String, String> headers = {
-          "Content-Type": "application/json;charset=utf-8"
-        };
+        if (allFileUrls.length < 5) {
+          print(
+              'there are less than 5 images. ${allFileUrls.length} are loaded');
+        } else {
+          thumbs.add(allFileUrls[0] + '?type=thumb');
+          thumbs.add(allFileUrls[1] + '?type=thumb');
 
-        try {
-          var fullResponse = await http.post(url,
-              headers: {'Content-Type': 'application/json; charset=utf-8'},
-              body: body);
-          var entries =
-              await jsonDecode(fullResponse.body)['results']['entries'];
-          //TODO:fix below.  This isn't working.
-          // Multiple rapid calls for the image thumbnails
-          // is not working.
-          await entries.forEach((element) async {
-            urls.add(element['fileUrl']);
-            var thumbResponse = await client
-                .get(element["fileUrl"] + '?type=thumb', headers: headers);
-            thumbs.add(thumbResponse.bodyBytes);
-          });
-          context.read<CameraNotifier>().updateLastFiveThumbs(thumbs);
-
-          var formattedResponse = formatJson('${fullResponse.body}');
-          context.read<ResponseNotifier>().updateResponse(formattedResponse);
-          context
-              .read<RequestNotifier>()
-              .updateRequest('${fullResponse.request}');
-        } catch (error) {
-          context
-              .read<ResponseNotifier>()
-              .updateResponse('request failed.\n\n Error code:\n $error');
-          context
-              .read<RequestNotifier>()
-              .updateRequest('Request failed. \n\n Attempted URL:\n $url');
-        } finally {
-          client.close();
+          Provider.of<CameraNotifier>(context, listen: false)
+              .updateLastFiveThumbs(thumbs);
         }
       },
       child: Text('5 Thumbnails'),
