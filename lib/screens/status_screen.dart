@@ -91,29 +91,20 @@ class StatusScreen extends StatelessWidget {
                   width: 300.0,
                   child: Center(
                     child: Text(
-                      'Request',
-                      style: TextStyle(fontSize: 28),
-                    ),
-                  ),
-                ),
-                Container(
-                  width: 300.0,
-                  child: Center(
-                    child: Text(
                       'Response',
                       style: TextStyle(fontSize: 28),
                     ),
                   ),
                 ),
-                Container(
-                  width: 300.0,
-                  child: Center(
-                    child: Text(
-                      'Last Image',
-                      style: TextStyle(fontSize: 28),
-                    ),
-                  ),
-                ),
+                // Container(
+                //   width: 300.0,
+                //   child: Center(
+                //     child: Text(
+                //       'Last Image',
+                //       style: TextStyle(fontSize: 28),
+                //     ),
+                //   ),
+                // ),
               ],
             ),
             SizedBox(
