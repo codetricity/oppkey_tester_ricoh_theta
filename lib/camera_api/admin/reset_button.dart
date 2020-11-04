@@ -36,7 +36,7 @@ class ResetButton extends StatelessWidget {
               .updateRequest('Request failed. \n\n Attempted URL:\n $url');
         }
       },
-      child: Text('Danger: Reset All Settings'),
+      child: Text('Reset All Settings'),
       color: Colors.red,
     );
   }
