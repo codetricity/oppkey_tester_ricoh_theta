@@ -5,10 +5,12 @@ import 'package:theta_req_res/windows/request_window.dart';
 import 'package:theta_req_res/windows/response_window.dart';
 import 'package:theta_req_res/screens/navigation_drawer.dart';
 import 'package:theta_req_res/camera_api/admin/reset_button.dart';
-import 'package:theta_req_res/camera_api/power/disable_sleep_button.dart';
-import 'package:theta_req_res/camera_api/power/show_sleep_delay_button.dart';
-import 'package:theta_req_res/camera_api/power/disable_power_off.dart';
-import 'package:theta_req_res/camera_api/power/show_off_delay_button.dart';
+import 'package:theta_req_res/camera_api/admin/power/disable_sleep_button.dart';
+import 'package:theta_req_res/camera_api/admin/power/show_sleep_delay_button.dart';
+import 'package:theta_req_res/camera_api/admin/power/disable_power_off.dart';
+import 'package:theta_req_res/camera_api/admin/power/enable_power_off.dart';
+
+import 'package:theta_req_res/camera_api/admin/power/show_off_delay_button.dart';
 import 'package:theta_req_res/camera_api/admin/delete_all_button.dart';
 
 class AdminScreen extends StatelessWidget {
@@ -33,6 +35,7 @@ class AdminScreen extends StatelessWidget {
                 DisableSleepButton(),
                 ShowSleepDelayButton(),
                 DisablePowerOffButton(),
+                EnablePowerOffButton(),
                 ShowOffDelayButton(),
                 ResetButton(),
                 DeleteAllButton(),
