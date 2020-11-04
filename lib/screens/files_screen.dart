@@ -4,7 +4,7 @@ import 'package:theta_req_res/notifiers/camera_notifier.dart';
 import 'package:theta_req_res/windows/request_window.dart';
 import 'package:theta_req_res/windows/response_window.dart';
 import 'package:theta_req_res/screens/navigation_drawer.dart';
-import 'package:theta_req_res/camera_api/files/delete_all_button.dart';
+import 'package:theta_req_res/camera_api/admin/delete_all_button.dart';
 import 'package:theta_req_res/camera_api/files/update_file_list_button.dart';
 
 class FilesScreen extends StatelessWidget {
@@ -28,7 +28,7 @@ class FilesScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 UpdateFileListButton(),
-                DeleteAllButton(),
+
                 //TODO: put list files button here
               ],
             ),
