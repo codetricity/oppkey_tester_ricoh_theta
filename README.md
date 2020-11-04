@@ -6,7 +6,14 @@ Tester for RICOH THETA 360 camera Wi-Fi APIs.
 
 ![status](doc/image/status.png)
 
+## 360 Panoramic Navigation
+
 ![panorama](doc/image/panorama.gif)
+
+## Preview and Quick Inspect on Equirectangular Images
+
+![zoom](doc/image/image_zoom.gif)
+
 
 ## Plan
 
