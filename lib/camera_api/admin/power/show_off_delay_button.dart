@@ -15,6 +15,7 @@ class ShowOffDelayButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
+      color: Colors.blue,
       onPressed: () async {
         var url = 'http://192.168.1.1/osc/commands/execute';
         var body = jsonEncode({
