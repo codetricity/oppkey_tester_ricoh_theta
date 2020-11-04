@@ -14,6 +14,8 @@ class FilesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var device = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -34,17 +36,83 @@ class FilesScreen extends StatelessWidget {
             ),
 
             Expanded(
-              child: Container(
-                alignment: Alignment.topCenter,
-                // child: Image.network('https://i.imgur.com/lk6WHIW.jpg'),
-                child: PhotoView(
-                  imageProvider: NetworkImage(
-                      '${Provider.of<CameraNotifier>(context).fileUri}'),
-                ),
-              ),
+              child: device.width < 1000
+                  ? MobilePhotoViewer()
+                  : DesktopPhotoViewer(),
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class DesktopPhotoViewer extends StatelessWidget {
+  const DesktopPhotoViewer({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var device = MediaQuery.of(context).size;
+
+    return Row(
+      children: [
+        Provider.of<CameraNotifier>(context).fileUriList.length > 0
+            ? Container(
+                padding: EdgeInsets.symmetric(horizontal: 5),
+                width: (device.width / 3.2),
+                // child: Text(
+                //     '${Provider.of<CameraNotifier>(context).fileUriList[0]}'),
+                // child: Image.network(
+                //     Provider.of<CameraNotifier>(context).fileUriList[0]),
+                child: InteractiveViewer(
+                    minScale: 0.1,
+                    maxScale: 10.0,
+                    child: Image.network(
+                        Provider.of<CameraNotifier>(context).fileUriList[0])),
+              )
+            : Container(child: Text('Image 1')),
+        Provider.of<CameraNotifier>(context).fileUriList.length > 1
+            ? Container(
+                padding: EdgeInsets.symmetric(horizontal: 5),
+                width: device.width / 3.2,
+                child: InteractiveViewer(
+                    minScale: 0.1,
+                    maxScale: 10.0,
+                    child: Image.network(
+                        Provider.of<CameraNotifier>(context).fileUriList[1])),
+              )
+            : Container(),
+        Provider.of<CameraNotifier>(context).fileUriList.length > 2
+            ? Container(
+                padding: EdgeInsets.symmetric(horizontal: 5),
+                width: device.width / 3.2,
+                child: InteractiveViewer(
+                    minScale: 0.1,
+                    maxScale: 10.0,
+                    child: Image.network(
+                        Provider.of<CameraNotifier>(context).fileUriList[2])),
+              )
+            : Container(),
+      ],
+    );
+  }
+}
+
+class MobilePhotoViewer extends StatelessWidget {
+  const MobilePhotoViewer({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.topCenter,
+      // child: Image.network('https://i.imgur.com/lk6WHIW.jpg'),
+      child: PhotoView(
+        imageProvider:
+            NetworkImage('${Provider.of<CameraNotifier>(context).fileUri}'),
       ),
     );
   }

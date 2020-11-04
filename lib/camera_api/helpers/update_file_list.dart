@@ -13,10 +13,17 @@ Future<void> updateFileList(context) async {
       'maxThumbSize': 0,
     }
   });
+  List<String> fileUriList = [];
   var response = await http.post(url,
       headers: {"Content-Type": "application/json;charset=utf-8"}, body: body);
   var responseBody = jsonDecode(response.body);
   var allFiles = (responseBody['results']['entries']);
-  print(allFiles);
+  allFiles.forEach(
+    (fileInfo) => {fileUriList.add(fileInfo['fileUrl'])},
+  );
+  print(fileUriList);
+  Provider.of<CameraNotifier>(context, listen: false)
+      .updateFileUriList(fileUriList);
+
   Provider.of<CameraNotifier>(context, listen: false).updateAllFiles(allFiles);
 }
