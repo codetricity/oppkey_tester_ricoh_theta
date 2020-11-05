@@ -31,6 +31,8 @@ include:
 
 ## Digest Authentication
 
+this is needed for client mode. 
+
 * https://pub.dev/packages/http_auth
 
 
