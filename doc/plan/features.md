@@ -29,6 +29,12 @@ include:
   * fonts
   * include in app theme
 
+
+## Bluetooth
+
+* https://pub.dev/packages/flutter_blue
+* https://blog.kuzzle.io/communicate-through-ble-using-flutter
+
 ## Zoom of Images
 
 Assess [photo_view](https://pub.dev/packages/photo_view)
