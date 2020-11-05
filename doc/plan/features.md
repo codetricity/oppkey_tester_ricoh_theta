@@ -29,6 +29,10 @@ include:
   * fonts
   * include in app theme
 
+## Digest Authentication
+
+* https://pub.dev/packages/http_auth
+
 
 ## Bluetooth
 
