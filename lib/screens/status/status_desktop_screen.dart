@@ -17,8 +17,12 @@ class StatusDesktopScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
-          height: 12,
+        Row(
+          children: [
+            SizedBox(
+              height: 12,
+            ),
+          ],
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
