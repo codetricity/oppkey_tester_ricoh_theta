@@ -39,77 +39,21 @@ class StatusScreen extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            // row of buttons to send commands to camera
+            // Buttons to send commands to camera
             device.width > 1000
-                ? Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      InfoButton(),
-                      StateButton(),
-                      TakePictureButton(),
-                      RaisedButton(
-                        onPressed: () {
-                          updateLastFileUri(context);
-                        },
-                        child: Text('Update Image'),
+                ? StatusDesktopButtonRow()
+                : StatusMobileButtons(),
+            device.width > 1000
+                ? Container(
+                    width: 300.0,
+                    child: Center(
+                      child: Text(
+                        'Response',
+                        style: TextStyle(fontSize: 28),
                       ),
-                      TestButton(),
-                    ],
-                  )
-                // This is the mobile view
-                // This was where the TODO was
-                : Expanded(
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            InfoButton(),
-                            StateButton(),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            TakePictureButton(),
-                            RaisedButton(
-                              onPressed: () {
-                                updateLastFileUri(context);
-                              },
-                              child: Text('Update Image'),
-                            ),
-                          ],
-                        ),
-                        Container(child: ThumbWindow()),
-                        Container(height: 300.0, child: ReqResWindow())
-                      ],
                     ),
-                  ),
-            // This is the end of the mobile view
-            device.width > 1000
-                ? Row(
-                    children: [
-                      Container(
-                        width: 300.0,
-                        child: Center(
-                          child: Text(
-                            'Response',
-                            style: TextStyle(fontSize: 28),
-                          ),
-                        ),
-                      ),
-                      // Container(
-                      //   width: 300.0,
-                      //   child: Center(
-                      //     child: Text(
-                      //       'Last Image',
-                      //       style: TextStyle(fontSize: 28),
-                      //     ),
-                      //   ),
-                      // ),
-                    ],
                   )
-                : Row(),
+                : Container(),
             SizedBox(
               height: 12,
             ),
@@ -129,6 +73,70 @@ class StatusScreen extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class StatusMobileButtons extends StatelessWidget {
+  const StatusMobileButtons({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Expanded(
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                InfoButton(),
+                StateButton(),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                TakePictureButton(),
+                RaisedButton(
+                  onPressed: () {
+                    updateLastFileUri(context);
+                  },
+                  child: Text('Update Image'),
+                ),
+              ],
+            ),
+            Container(child: ThumbWindow()),
+            Container(height: 300.0, child: ReqResWindow())
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class StatusDesktopButtonRow extends StatelessWidget {
+  const StatusDesktopButtonRow({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        InfoButton(),
+        StateButton(),
+        TakePictureButton(),
+        RaisedButton(
+          onPressed: () {
+            updateLastFileUri(context);
+          },
+          child: Text('Update Image'),
+        ),
+        TestButton(),
+      ],
     );
   }
 }
