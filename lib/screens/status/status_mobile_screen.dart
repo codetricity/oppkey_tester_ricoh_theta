@@ -13,37 +13,47 @@ class StatusMobileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Expanded(
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                InfoButton(),
-                StateButton(),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                TakePictureButton(),
-                RaisedButton(
-                  onPressed: () {
-                    updateLastFileUri(context);
-                  },
-                  child: Text('Update Image'),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 12,
-            ),
-            Container(child: ThumbWindow()),
-            Container(height: 300.0, child: ReqResWindow())
-          ],
+    return Column(
+      children: [
+        Container(
+          height: 150,
+          child: GridView.count(
+            padding: const EdgeInsets.all(10),
+            crossAxisCount: 2,
+            crossAxisSpacing: 6,
+            mainAxisSpacing: 6,
+            childAspectRatio: 4,
+            shrinkWrap: true,
+            children: [
+              InfoButton(),
+              StateButton(),
+              TakePictureButton(),
+              UpdateLastFileUriButton(),
+            ],
+          ),
         ),
-      ),
+        SizedBox(
+          height: 12,
+        ),
+        Container(child: ThumbWindow()),
+        Container(height: 200.0, child: ReqResWindow())
+      ],
+    );
+  }
+}
+
+class UpdateLastFileUriButton extends StatelessWidget {
+  const UpdateLastFileUriButton({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return RaisedButton(
+      onPressed: () {
+        updateLastFileUri(context);
+      },
+      child: Text('Update Image'),
     );
   }
 }
