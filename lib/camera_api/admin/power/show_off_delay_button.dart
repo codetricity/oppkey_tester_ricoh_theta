@@ -32,7 +32,7 @@ class ShowOffDelayButton extends StatelessWidget {
           var fullResponse = await http.post(url,
               headers: {"Content-Type": "application/json; charset=utf-8"},
               body: body);
-          var offDelayMessage = '\n65535 will disable power off, bitches!';
+          var offDelayMessage = '\n65535 will disable power off';
           formattedResponse =
               formatJson('${fullResponse.body}') + offDelayMessage;
           formattedReqRes = 'REQUEST\n' +
