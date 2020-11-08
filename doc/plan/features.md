@@ -29,6 +29,27 @@ include:
   * fonts
   * include in app theme
 
+## Documentation
+
+Implement docstrings into code.
+
+dartdoc
+https://github.com/dart-lang/dartdoc
+
+docstrings
+https://dart.dev/guides/language/effective-dart/documentation
+
+technical writing style
+https://en.wikiversity.org/wiki/Technical_writing/Style
+
+## Assess Project Management Tool in GitHub
+
+We don't seem to need this at the moment as our level of pull requests is low.
+
+https://github.com/codetricity/oppkey_tester_ricoh_theta/projects
+
+Figure out how to assign an issue.
+
 ## Digest Authentication
 
 this is needed for client mode. 
