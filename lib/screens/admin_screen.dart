@@ -33,19 +33,50 @@ class AdminScreen extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
+            // Sized ox to add space between top AppBar and main buttons
+            Row(
+              children: [
+                SizedBox(
+                  height: 12,
+                ),
+              ],
+            ),
+
             // row of buttons to send commands to camera
             device.width > 1000
-                ? Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                ? Column(
                     children: [
-                      DisableSleepButton(),
-                      ShowSleepDelayButton(),
-                      DisablePowerOffButton(),
-                      EnablePowerOffButton(),
-                      EnableSleepDelayButton(),
-                      ShowOffDelayButton(),
-                      ResetButton(),
-                      DeleteAllButton(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          DisableSleepButton(),
+                          EnableSleepDelayButton(),
+                          DisablePowerOffButton(),
+                          EnablePowerOffButton(),
+                          ShowOffDelayButton(),
+                          ShowSleepDelayButton(),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          SizedBox(
+                              height: 30,
+                              child: Text(
+                                'Warning: Buttons in red change THETA settings, cannot be undone',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20.0),
+                              )),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          ResetButton(),
+                          DeleteAllButton(),
+                        ],
+                      ),
                     ],
                   )
                 : Expanded(
@@ -78,7 +109,7 @@ class AdminScreen extends StatelessWidget {
                               SizedBox(
                                   height: 30.0,
                                   child: Text(
-                                    'Danger Will Robinson',
+                                    'Warning: Changing THETA settings',
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 20.0),
