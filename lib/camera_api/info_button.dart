@@ -6,18 +6,16 @@ import 'package:theta_req_res/notifiers/req_res_notifier.dart';
 import 'package:theta_req_res/utils/format_json.dart';
 import 'package:http/http.dart' as http;
 
+/// HTTP GET to /osc/info
+///
+/// https://api.ricoh/docs/theta-web-api-v2.1/protocols/info/
+///
+/// Used to get the camera model and firmware version.
+/// RICOH THETA API changes depending on camera model and firmware
 class InfoButton extends StatelessWidget {
   const InfoButton({
     Key key,
   }) : super(key: key);
-
-  /// HTTP GET to /osc/info
-  ///
-  /// https://api.ricoh/docs/theta-web-api-v2.1/protocols/info/
-  ///
-  /// Used to get the camera model and firmware version.
-  /// RICOH THETA API changes depending on camera model and firmware
-  ///
 
   @override
   Widget build(BuildContext context) {
