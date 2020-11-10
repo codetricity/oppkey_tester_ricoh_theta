@@ -11,6 +11,14 @@ class InfoButton extends StatelessWidget {
     Key key,
   }) : super(key: key);
 
+  /// HTTP GET to /osc/info
+  ///
+  /// https://api.ricoh/docs/theta-web-api-v2.1/protocols/info/
+  ///
+  /// Used to get the camera model and firmware version.
+  /// RICOH THETA API changes depending on camera model and firmware
+  ///
+
   @override
   Widget build(BuildContext context) {
     return RaisedButton(

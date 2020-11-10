@@ -42,6 +42,8 @@ https://dart.dev/guides/language/effective-dart/documentation
 technical writing style
 https://en.wikiversity.org/wiki/Technical_writing/Style
 
+To use dartdoc, must set the environmental variable `FLUTTER_ROOT`.  
+
 ## Assess Project Management Tool in GitHub
 
 We don't seem to need this at the moment as our level of pull requests is low.
