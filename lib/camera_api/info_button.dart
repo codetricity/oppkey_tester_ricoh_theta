@@ -6,8 +6,9 @@ import 'package:theta_req_res/notifiers/req_res_notifier.dart';
 import 'package:theta_req_res/utils/format_json.dart';
 import 'package:http/http.dart' as http;
 
-/// HTTP GET to /osc/info
+/// Show camera info such as THETA model and firmware
 ///
+/// HTTP GET to /osc/info
 /// https://api.ricoh/docs/theta-web-api-v2.1/protocols/info/
 ///
 /// Used to get the camera model and firmware version.

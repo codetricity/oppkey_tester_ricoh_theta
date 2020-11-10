@@ -6,6 +6,15 @@ import 'package:theta_req_res/notifiers/request_notifier.dart';
 import 'package:theta_req_res/notifiers/req_res_notifier.dart';
 import 'package:theta_req_res/utils/format_json.dart';
 
+/// Get state of camera, including last file URI and battery level
+///
+/// API version and picture status in sequence of captured pictures
+/// for brackets
+/// https://api.ricoh/docs/theta-web-api-v2.1/protocols/state/
+/// returns
+/// * _apiVersion
+/// * _cameraError
+
 class StateButton extends StatelessWidget {
   const StateButton({
     Key key,
