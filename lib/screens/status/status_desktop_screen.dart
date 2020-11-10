@@ -8,6 +8,9 @@ import 'package:theta_req_res/camera_api/helpers/update_last_file_uri.dart';
 import 'package:theta_req_res/camera_api/test_button.dart';
 import 'package:theta_req_res/windows/thumb_window.dart';
 
+/// Desktop view of screen shown if over 1000px wide
+/// shows basic camera status such as info and state
+///
 class StatusDesktopScreen extends StatelessWidget {
   const StatusDesktopScreen({
     Key key,
