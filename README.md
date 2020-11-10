@@ -2,7 +2,7 @@
 
 This application is available for mobile and desktop. It is a tester for RICOH THETA 360 camera Wi-Fi APIs. It demos fundamental API commands that provide key information for creating successful applications for the RICOH THETA.
 
-[Project Documentation](doc/api/index.html)
+[Project Documentation](https://codetricity.github.io/oppkey_tester_ricoh_theta/doc/api/index.html)
 
 ## Introduction
 
