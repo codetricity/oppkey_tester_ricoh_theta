@@ -33,7 +33,7 @@ class AdminScreen extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            // Sized ox to add space between top AppBar and main buttons
+            // Sized box to add space between top AppBar and main buttons
             Row(
               children: [
                 SizedBox(
@@ -127,6 +127,7 @@ class AdminScreen extends StatelessWidget {
                     ),
                   ),
             // This is the end of the mobile view
+            // request, response, and image windows
             device.width > 1000
                 ? Row(
                     children: [
@@ -154,7 +155,6 @@ class AdminScreen extends StatelessWidget {
             SizedBox(
               height: 12,
             ),
-            // request, response, and image windows
             device.width > 1000
                 ? Expanded(
                     child: Row(

@@ -8,6 +8,13 @@ import 'package:theta_req_res/utils/format_json.dart';
 import 'dart:convert';
 import 'package:theta_req_res/camera_api/helpers/return_sleep_delay.dart';
 
+/// Displays information on sleep status of the camera
+/// * Default is 300 seconds
+/// * Disable is 65535
+/// * Make sure you also disable power off
+/// * We're still looking into differences between THETA SC2 sleep and power off
+/// https://api.ricoh/docs/theta-web-api-v2.1/options/sleep_delay/
+/// ![](https://community.theta360.guide/uploads/default/original/2X/5/5898a475daaa05b3a8e99999971c4c9065aede6f.png)
 class ShowSleepDelayButton extends StatelessWidget {
   const ShowSleepDelayButton({
     Key key,
