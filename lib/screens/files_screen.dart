@@ -25,6 +25,10 @@ class FilesScreen extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
+            SizedBox(
+              height: 12,
+            ),
+
             // row of buttons to send commands to camera
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

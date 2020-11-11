@@ -26,6 +26,9 @@ class JesseScreen extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
+            SizedBox(
+              height: 12,
+            ),
             // row of buttons to send commands to camera
             // if it's bigger than 1000 pixels, it's a desktop
             device.width > 1000
