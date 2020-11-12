@@ -22,7 +22,7 @@ This application is available under license from Oppkey, Inc.
 
 ## Pre-requisites
 
-* Flutter, dev channel
+* Flutter, master channel
 * Android SDK
 * Visual Studio
 * Android Studio
@@ -121,9 +121,11 @@ In `AndroidManifest.xml`
 
 ### Sync Local Repo with Upstream (master repo)
 
-If the codetricity repo is ahead of jcasman, then fetch the upstream (codetricity) repo before you edit your code locally.
+If the codetricity repo is ahead of jcasman, then fetch the upstream (codetricity) repo before you edit your code locally and merge. Also, 
+a push is required to keep your fork up-to-date.
 
 ```
 git fetch upstream
 git merge upstream/main
+git push
 ```
