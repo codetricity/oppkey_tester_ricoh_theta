@@ -22,7 +22,7 @@ This application is available under license from Oppkey, Inc.
 
 ## Pre-requisites
 
-* Flutter, master channel
+* Flutter, master channel - As of Nov 12, dev channel has bug - For now, we need to use the Flutter master channel - expect to use dev channel again eventually
 * Android SDK
 * Visual Studio
 * Android Studio
@@ -51,9 +51,10 @@ This application is available under license from Oppkey, Inc.
 $ flutter create .
 $ flutter pub get
 ```
-Make sure to use Flutter dev channel
+Make sure to use Flutter master channel (as of Nov 12) 
 ```
-$  flutter channel dev
+# CHANGE BACK TO DEV CHANNEL
+$  flutter channel master
 ```
 
 Make sure that you have the latest desktop support and that it’s enabled
