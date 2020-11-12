@@ -22,7 +22,7 @@ This application is available under license from Oppkey, Inc.
 
 ## Pre-requisites
 
-* Flutter, dev channel
+* Flutter, master channel - As of Nov 12, dev channel has bug - For now, we need to use the Flutter master channel - expect to use dev channel again eventually
 * Android SDK
 * Visual Studio
 * Android Studio
@@ -51,9 +51,10 @@ This application is available under license from Oppkey, Inc.
 $ flutter create .
 $ flutter pub get
 ```
-Make sure to use Flutter dev channel
+Make sure to use Flutter master channel (as of Nov 12) 
 ```
-$  flutter channel dev
+# CHANGE BACK TO DEV CHANNEL
+$  flutter channel master
 ```
 
 Make sure that you have the latest desktop support and that it’s enabled
@@ -121,9 +122,11 @@ In `AndroidManifest.xml`
 
 ### Sync Local Repo with Upstream (master repo)
 
-If the codetricity repo is ahead of jcasman, then fetch the upstream (codetricity) repo before you edit your code locally.
+If the codetricity repo is ahead of jcasman, then fetch the upstream (codetricity) repo before you edit your code locally and merge. Also, 
+a push is required to keep your fork up-to-date.
 
 ```
 git fetch upstream
 git merge upstream/main
+git push
 ```
